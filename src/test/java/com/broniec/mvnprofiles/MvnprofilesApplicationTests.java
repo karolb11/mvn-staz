@@ -1,0 +1,13 @@
+package com.broniec.mvnprofiles;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class MvnprofilesApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
