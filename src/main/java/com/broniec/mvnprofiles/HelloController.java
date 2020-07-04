@@ -6,12 +6,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.core.env.Environment;
 
 @Controller
 public class HelloController {
 
-    @Autowired
+    final
     AppProperties appProperties;
+    final
+    Environment env;
+
+    public HelloController(AppProperties appProperties, Environment env) {
+        this.appProperties = appProperties;
+        this.env = env;
+    }
 
     @GetMapping({"/", "/hello"})
     public String hello(
@@ -20,7 +28,12 @@ public class HelloController {
     ) {
 
         model.addAttribute("name", name);
+        model.addAttribute("javaHome", appProperties.getJavaHome());
         model.addAttribute("profile", appProperties.getX());
+        model.addAttribute("springVersion", appProperties.getSpringVersion());
+        model.addAttribute("version", appProperties.getVersion());
+        model.addAttribute("basedir", appProperties.getBasedir());
+        model.addAttribute("filteredProperty", appProperties.getFilteredProperty());
         return "hello";
     }
 }

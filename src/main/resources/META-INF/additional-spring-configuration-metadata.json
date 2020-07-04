@@ -4,5 +4,15 @@
       "name": "X",
       "type": "java.lang.String",
       "description": "Description for X."
+    },
+    {
+      "name": "springVersion",
+      "type": "java.lang.String",
+      "description": "Description for springVersion."
+    },
+    {
+      "name": "filteredProperty",
+      "type": "java.lang.String",
+      "description": "Description for filteredProperty."
     }
   ] }
