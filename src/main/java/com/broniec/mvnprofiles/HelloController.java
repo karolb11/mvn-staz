@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.core.env.Environment;
 
+import javax.servlet.ServletContext;
+
 @Controller
 public class HelloController {
 
@@ -15,25 +17,36 @@ public class HelloController {
     AppProperties appProperties;
     final
     Environment env;
+    final
+    ServletContext context;
 
-    public HelloController(AppProperties appProperties, Environment env) {
+    public HelloController(AppProperties appProperties, Environment env, ServletContext context) {
         this.appProperties = appProperties;
         this.env = env;
+        this.context = context;
     }
 
     @GetMapping({"/", "/hello"})
     public String hello(
-            Model model,
-            @RequestParam(value="name", required=false, defaultValue="World") String name
+            Model model
     ) {
-
-        model.addAttribute("name", name);
+        String varX = context.getInitParameter("varX");
         model.addAttribute("javaHome", appProperties.getJavaHome());
         model.addAttribute("profile", appProperties.getX());
+        model.addAttribute("webXmlPath", appProperties.getWebXmlPath());
         model.addAttribute("springVersion", appProperties.getSpringVersion());
         model.addAttribute("version", appProperties.getVersion());
         model.addAttribute("basedir", appProperties.getBasedir());
         model.addAttribute("filteredProperty", appProperties.getFilteredProperty());
+        model.addAttribute("osName", appProperties.getOsName());
+        model.addAttribute("varX", varX);
         return "hello";
+    }
+
+    @GetMapping({"/info"})
+    public String info(
+            Model model
+    ) {
+        return "info";
     }
 }
