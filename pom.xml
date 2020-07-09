@@ -94,6 +94,7 @@
             <properties>
                 <activatedProperties>dev</activatedProperties>
                 <webXmlPath>src/main/config/dev/WEB-INF/web.xml</webXmlPath>
+                <X>Development</X>
             </properties>
             <activation>
                 <property>
@@ -107,6 +108,7 @@
             <properties>
                 <activatedProperties>prod</activatedProperties>
                 <webXmlPath>src/main/config/prod/WEB-INF/web.xml</webXmlPath>
+                <X>Production</X>
             </properties>
             <activation>
                 <property>
@@ -120,6 +122,7 @@
             <properties>
                 <activatedProperties>test</activatedProperties>
                 <webXmlPath>src/main/config/test/WEB-INF/web.xml</webXmlPath>
+                <X>Test</X>
             </properties>
             <activation>
                 <property>
@@ -133,6 +136,7 @@
             <properties>
                 <activatedProperties>default</activatedProperties>
                 <webXmlPath>src/main/config/default/WEB-INF/web.xml</webXmlPath>
+                <X>None</X>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
