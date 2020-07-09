@@ -26,6 +26,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.2.7.RELEASE</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
@@ -73,6 +78,13 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webXml>${webXmlPath}</webXml>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -81,18 +93,46 @@
             <id>dev</id>
             <properties>
                 <activatedProperties>dev</activatedProperties>
+                <webXmlPath>src/main/config/dev/WEB-INF/web.xml</webXmlPath>
             </properties>
+            <activation>
+                <property>
+                    <name>profile</name>
+                    <value>dev</value>
+                </property>
+            </activation>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
                 <activatedProperties>prod</activatedProperties>
+                <webXmlPath>src/main/config/prod/WEB-INF/web.xml</webXmlPath>
             </properties>
+            <activation>
+                <property>
+                    <name>profile</name>
+                    <value>prod</value>
+                </property>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <activatedProperties>test</activatedProperties>
+                <webXmlPath>src/main/config/test/WEB-INF/web.xml</webXmlPath>
+            </properties>
+            <activation>
+                <property>
+                    <name>profile</name>
+                    <value>test</value>
+                </property>
+            </activation>
         </profile>
         <profile>
             <id>default</id>
             <properties>
                 <activatedProperties>default</activatedProperties>
+                <webXmlPath>src/main/config/default/WEB-INF/web.xml</webXmlPath>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>

@@ -12,6 +12,6 @@ public class AppProperties {
     private String basedir;
     private String filteredProperty;
     private String javaHome;
-
-
+    private String osName;
+    private String webXmlPath;
 }
