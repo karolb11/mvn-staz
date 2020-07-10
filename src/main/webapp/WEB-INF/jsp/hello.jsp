@@ -7,7 +7,7 @@
 </head>
 <body>
 <h2 class="hello-title">Hello ${name}!</h2>
-<h3>profile: ${profile}</h3>
+<h3>X: ${profile}</h3>
 <h3>os.name: ${osName}</h3>
 <h3>JAVA_HOME: ${javaHome}</h3>
 <h3>spring.version: ${springVersion}</h3>

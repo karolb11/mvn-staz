@@ -1,4 +1,10 @@
-<context-param>
-    <param-name>varX</param-name>
-    <param-value>development</param-value>
-</context-param>
+<servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>
+        org.springframework.web.servlet.DispatcherServlet
+    </servlet-class>
+    <init-param>
+        <param-name>varX</param-name>
+        <param-value>development</param-value>
+    </init-param>
+</servlet>

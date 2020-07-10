@@ -11,7 +11,7 @@
     <groupId>com.broniec</groupId>
     <artifactId>mvnprofiles</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>mvnprofiles</name>
     <description>Demo project for Spring Boot</description>
 
@@ -60,6 +60,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.broniec</groupId>
+            <artifactId>MyClass3</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
