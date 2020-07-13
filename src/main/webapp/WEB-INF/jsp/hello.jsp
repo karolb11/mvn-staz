@@ -15,7 +15,7 @@
 <h3>basedir: ${basedir}</h3>
 <h3>filteredVariable: ${filteredProperty}</h3>
 <h3>webXmlPath: ${webXmlPath}</h3>
-<h3>varX: ${varX}</h3>
+<h3>myStaticMethodOutput: ${myStaticMethodOutput}</h3>
 
 </body>
 </html>
